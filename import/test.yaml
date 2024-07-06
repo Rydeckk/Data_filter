@@ -1,0 +1,17 @@
+- id: 1
+  name: Romain
+  age: 12
+  type: etudiant
+  notes:
+  - 12
+  - 56
+  - 23
+- id: 2
+  name: Romain2
+  age: 15
+  type: professeur
+  notes:
+  - 10
+  - 65
+  - 2.26
+  

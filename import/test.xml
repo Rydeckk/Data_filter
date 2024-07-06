@@ -1,0 +1,24 @@
+<structure>
+    <item>
+        <id>1</id>
+        <name>Romain</name>
+        <age>12</age>
+        <type>etudiant</type>
+        <notes>
+            <note>12</note>
+            <note>56</note>
+            <note>23</note>
+        </notes>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Romain2</name>
+        <age>15</age>
+        <type>professeur</type>
+        <notes>
+            <note>10</note>
+            <note>65</note>
+            <note>2.26</note>
+        </notes>
+    </item>
+</structure>
