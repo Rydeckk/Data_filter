@@ -2,15 +2,17 @@
   id: 1
   name: Romain
   notes:
-  - 12
-  - 56
-  - 23
-  type: etudiant
+  - 2.26
+  - 56.23
+  - 12.14
+  premierClasse: true
+  type: Etudiant
 - age: 15
   id: 2
   name: Romain2
   notes:
-  - 10
-  - 65
   - 2.26
-  type: professeur
+  - 56.23
+  - 12.14
+  premierClasse: false
+  type: Professeur

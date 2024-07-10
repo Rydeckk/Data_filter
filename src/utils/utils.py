@@ -15,3 +15,12 @@ def cast_value(value):
                 return ast.literal_eval(value)
             except (ValueError, SyntaxError):
                 return value
+        
+def is_numeric(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+def is_boolean(value):
+    return isinstance(value, bool)
+
+def is_list(value):
+    return isinstance(value, list)

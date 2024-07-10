@@ -4,22 +4,24 @@
     <id>1</id>
     <name>Romain</name>
     <age>12</age>
-    <type>etudiant</type>
+    <type>Etudiant</type>
     <notes>
-      <notesElement>12</notesElement>
-      <notesElement>56</notesElement>
-      <notesElement>23</notesElement>
+      <notesElement>2.26</notesElement>
+      <notesElement>56.23</notesElement>
+      <notesElement>12.14</notesElement>
     </notes>
+    <premierClasse>True</premierClasse>
   </item>
   <item>
     <id>2</id>
     <name>Romain2</name>
     <age>15</age>
-    <type>professeur</type>
+    <type>Professeur</type>
     <notes>
-      <notesElement>10</notesElement>
-      <notesElement>65</notesElement>
       <notesElement>2.26</notesElement>
+      <notesElement>56.23</notesElement>
+      <notesElement>12.14</notesElement>
     </notes>
+    <premierClasse>False</premierClasse>
   </item>
 </structure>

@@ -2,6 +2,7 @@ from data.dataCSV import create_file_csv, save_data_csv
 from data.dataJSON import create_file_json, save_data_json
 from data.dataXML import create_file_xml, save_data_xml
 from data.dataYAML import create_file_yaml, save_data_yaml
+from stats.stats import print_structure_stats
 
 
 structure = []
@@ -23,16 +24,19 @@ else:
 
 
 print(structure)
+print_structure_stats(structure)
 
-choice = input("Export en quel format : ")
+exportYes = input("Voulez vous exporter les données (yes/no) : ")
+if(exportYes == "yes"):
+    choice = input("Export en quel format : ")
 
-if(choice == "csv"):
-    create_file_csv(structure)
-elif(choice == "json"):
-    create_file_json(structure)
-elif(choice == "xml"):
-    create_file_xml(structure)
-elif(choice == "yaml"):
-    create_file_yaml(structure)
-else:
-    print("Mauvais format")
+    if(choice == "csv"):
+        create_file_csv(structure)
+    elif(choice == "json"):
+        create_file_json(structure)
+    elif(choice == "xml"):
+        create_file_xml(structure)
+    elif(choice == "yaml"):
+        create_file_yaml(structure)
+    else:
+        print("Mauvais format")
