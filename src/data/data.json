@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "age": 21,
+        "type": "Etudiant",
+        "courses": ["Math", "Science", "History"],
+        "grades": [85, 92, 78],
+        "enrolled": true
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "age": 22,
+        "type": "Etudiant",
+        "courses": ["Math", "Art"],
+        "grades": [89, 94],
+        "enrolled": true
+    },
+    {
+        "id": 3,
+        "name": "Charlie",
+        "age": 23,
+        "type": "Professeur",
+        "courses": ["Science", "History"],
+        "grades": [],
+        "enrolled": false
+    },
+    {
+        "id": 4,
+        "name": "Diana",
+        "age": 35,
+        "type": "Professeur",
+        "courses": ["Math", "Art", "Music"],
+        "grades": [],
+        "enrolled": true
+    },
+    {
+        "id": 5,
+        "name": "Eve",
+        "age": 40,
+        "type": "Administrateur",
+        "courses": [],
+        "grades": [],
+        "enrolled": true
+    },
+    {
+        "id": 6,
+        "name": "Frank",
+        "age": 29,
+        "type": "Etudiant",
+        "courses": ["History"],
+        "grades": [70],
+        "enrolled": false
+    },
+    {
+        "id": 7,
+        "name": "Grace",
+        "age": 27,
+        "type": "Professeur",
+        "courses": ["Art"],
+        "grades": [],
+        "enrolled": true
+    },
+    {
+        "id": 8,
+        "name": "Henry",
+        "age": 25,
+        "type": "Etudiant",
+        "courses": ["Math", "Science", "Art"],
+        "grades": [80, 85, 88],
+        "enrolled": true
+    },
+    {
+        "id": 9,
+        "name": "Ivy",
+        "age": 30,
+        "type": "Professeur",
+        "courses": ["Math", "Science"],
+        "grades": [],
+        "enrolled": true
+    },
+    {
+        "id": 10,
+        "name": "Jack",
+        "age": 32,
+        "type": "Etudiant",
+        "courses": ["Music"],
+        "grades": [75],
+        "enrolled": true
+    }
+]
