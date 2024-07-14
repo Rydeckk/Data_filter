@@ -1,17 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Romain",
-        "age": 12,
-        "type": "Etudiant",
-        "notes": [
-            2.26,
-            56.23,
-            12.14
-        ],
-        "premierClasse": true
-    },
-    {
         "id": 2,
         "name": "Romain2",
         "age": 15,
