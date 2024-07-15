@@ -127,7 +127,7 @@ class Controller:
                 text += f"  Taille moyenne : {values['moyenne']} \n"
                 labStat = QLabel(text)
                 y += 1
-
+            labStat.setStyleSheet("border: 2px solid black; font-size: 14px;")
             grid.addWidget(labStat,x,y)
 
             if(y % 3 == 0 and y != 0):

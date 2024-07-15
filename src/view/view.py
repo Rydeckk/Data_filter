@@ -99,6 +99,7 @@ class LayoutImport(QWidget):
         self.buttonSaveImport.clicked.connect(self.click_button_save)
         self.tbNameFile = QLineEdit()
         self.tbNameFile.setPlaceholderText("Rentrez un nom de fichier (csv, json, xml, yaml)")
+        self.tbNameFile.setFixedSize(300,30)
         self.labError = QLabel()
         self.labError.setHidden(True)
         self.labError.setStyleSheet("color: red;")
@@ -113,6 +114,7 @@ class LayoutImport(QWidget):
         layout.addItem(verticalSpacer)
         layout.addWidget(self.tbNameFile)
         layout.addWidget(self.labError)
+        layout.addSpacing(20)
         layout.addWidget(self.buttonSaveImport)
         layout.addItem(verticalSpacer)
 
@@ -143,11 +145,17 @@ class LayoutMenu(QWidget):
         self.layout_to_show_callback = layout_to_show_callback
 
         labelMenu = QLabel("Choisissez une option")
+        labelMenu.setStyleSheet("font-size: 16px;")
         self.buttonFiltre = QPushButton("Filtre")
+        self.buttonFiltre.setFixedSize(200,30)
         self.buttonTri = QPushButton("Tri")
+        self.buttonTri.setFixedSize(200,30)
         self.buttonStats = QPushButton("Stats")
+        self.buttonStats.setFixedSize(200,30)
         self.buttonExport = QPushButton("Export")
+        self.buttonExport.setFixedSize(200,30)
         self.buttonAfficher = QPushButton("Afficher")
+        self.buttonAfficher.setFixedSize(200,30)
 
         self.buttonFiltre.clicked.connect(self.click_button_filtre)
         self.buttonTri.clicked.connect(self.click_button_tri)
@@ -164,10 +172,15 @@ class LayoutMenu(QWidget):
         layout = QVBoxLayout()
         layout.addItem(verticalSpacer)
         layout.addWidget(labelMenu)
+        layout.addSpacing(20)
         layout.addWidget(self.buttonFiltre)
+        layout.addSpacing(5)
         layout.addWidget(self.buttonTri)
+        layout.addSpacing(5)
         layout.addWidget(self.buttonStats)
+        layout.addSpacing(5)
         layout.addWidget(self.buttonExport)
+        layout.addSpacing(5)
         layout.addWidget(self.buttonAfficher)
         layout.addItem(verticalSpacer)
 
@@ -205,24 +218,38 @@ class LayoutFiltre(QWidget):
 
         self.tbChamp = QLineEdit()
         self.tbChamp.setPlaceholderText("Entrez le champs à filtrer")
+        self.tbChamp.setFixedHeight(30)
 
         self.tbOperator = QLineEdit()
-        self.tbOperator.setPlaceholderText("(==, !=, >, >=, <, <=, contient, commence_par, finit_par, tous_les_elements, min, max, moyenne)")
-                                        
+        self.tbOperator.setPlaceholderText("Rentrez un opérateur")
+        self.tbOperator.setFixedHeight(30)                     
+
         self.tbValueToCompare = QLineEdit()
         self.tbValueToCompare.setPlaceholderText("Entrez la valeur de comparaison")
+        self.tbValueToCompare.setFixedHeight(30)
 
         self.buttonFiltrer = QPushButton("Filtrer")
         self.buttonFiltrer.clicked.connect(self.click_button_filter)
+
+        labOperateur = QLabel("(==, !=, >, >=, <, <=, contient, commence_par, finit_par, tous_les_elements, min, max, moyenne)")
+
+        self.labSuccess = QLabel("Données filtrées avec succès")
+        self.labSuccess.setHidden(True)
+        self.labSuccess.setStyleSheet("color: green;")
 
         mainLayout.addItem(horizontalSpacer)
 
         layout = QVBoxLayout()
         layout.addItem(verticalSpacer)
         layout.addWidget(self.tbChamp)
+        layout.addSpacing(5)
         layout.addWidget(self.tbOperator)
+        layout.addWidget(labOperateur)
+        layout.addSpacing(5)
         layout.addWidget(self.tbValueToCompare)
+        layout.addSpacing(20)
         layout.addWidget(self.buttonFiltrer)
+        layout.addWidget(self.labSuccess)
         layout.addItem(verticalSpacer)
 
         mainLayout.addLayout(layout)
@@ -231,6 +258,7 @@ class LayoutFiltre(QWidget):
 
     def click_button_filter(self):
         self.controller.filter_data(self.tbChamp.text(), self.tbOperator.text(), self.tbValueToCompare.text())
+        self.labSuccess.setHidden(False)
 
 class LayoutTri(QWidget):
     def __init__(self, controller, layout_to_show_callback):
@@ -244,20 +272,29 @@ class LayoutTri(QWidget):
 
         self.tbchamp = QLineEdit()
         self.tbchamp.setPlaceholderText("Entrez les champs à trier (séparé par des virgules)")
+        self.tbchamp.setFixedSize(300,30)
 
         self.tbOrder = QLineEdit()
         self.tbOrder.setPlaceholderText("Entrez l'ordre du tri (asc/desc)")
+        self.tbOrder.setFixedSize(300,30)
 
         self.buttonTri = QPushButton("Trier")
         self.buttonTri.clicked.connect(self.click_button_tri)
+
+        self.labSuccess = QLabel("Données triées avec succès")
+        self.labSuccess.setHidden(True)
+        self.labSuccess.setStyleSheet("color: green;")
 
         mainLayout.addItem(horizontalSpacer)
 
         layout = QVBoxLayout()
         layout.addItem(verticalSpacer)
         layout.addWidget(self.tbchamp)
+        layout.addSpacing(5)
         layout.addWidget(self.tbOrder)
+        layout.addSpacing(20)
         layout.addWidget(self.buttonTri)
+        layout.addWidget(self.labSuccess)
         layout.addItem(verticalSpacer)
 
         mainLayout.addLayout(layout)
@@ -266,6 +303,7 @@ class LayoutTri(QWidget):
 
     def click_button_tri(self):
         self.controller.sort_data(self.tbchamp.text().split(","), self.tbOrder.text())
+        self.labSuccess.setHidden(False)
 
 class LayoutStats(QWidget):
     def __init__(self, controller, layout_to_show_callback):
@@ -274,21 +312,14 @@ class LayoutStats(QWidget):
         self.layout_to_show_callback = layout_to_show_callback
 
         mainLayout = QHBoxLayout(self)
-        horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-        verticalSpacer = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.gridStat = QGridLayout()
         self.controller.get_stats(self.gridStat)
-        mainLayout.addItem(horizontalSpacer)
 
         layout = QVBoxLayout()
-        layout.addItem(verticalSpacer)
         layout.addLayout(self.gridStat)
-        layout.addItem(verticalSpacer)
 
         mainLayout.addLayout(layout)
-        
-        mainLayout.addItem(horizontalSpacer)
 
 class LayoutExport(QWidget):
     def __init__(self, controller, layout_to_show_callback):
@@ -302,6 +333,7 @@ class LayoutExport(QWidget):
 
         self.tbExtensionExport = QLineEdit()
         self.tbExtensionExport.setPlaceholderText("Rentrez le format que vous voulez (csv, json, xml, yaml)")
+        self.tbExtensionExport.setFixedSize(300,30)
 
         self.buttonExport = QPushButton("Exporter")
         self.buttonExport.clicked.connect(self.click_export)
@@ -321,6 +353,7 @@ class LayoutExport(QWidget):
         layout.addWidget(self.tbExtensionExport)
         layout.addWidget(self.labError)
         layout.addWidget(self.labSuccess)
+        layout.addSpacing(20)
         layout.addWidget(self.buttonExport)
         layout.addItem(verticalSpacer)
 
@@ -353,11 +386,14 @@ class LayoutAfficher(QWidget):
         layout.addItem(verticalSpacer)
 
         self.tableWidget = QTableWidget()
+        self.tableWidget.setMinimumSize(600,400)
+
         nbColumn = self.controller.get_number_column()
         nbRow = self.controller.get_number_row() + 1
         self.tableWidget.setRowCount(nbRow)
         self.tableWidget.setColumnCount(nbColumn)
         self.controller.fill_table(self.tableWidget)
+
         layout.addWidget(self.tableWidget)
         layout.addItem(verticalSpacer)
 
